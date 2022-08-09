@@ -1,0 +1,143 @@
+html {
+	/*margin-left:10%;
+	margin-right:10%;*/
+}
+.container, footer {
+	width:100%;
+}
+header {
+	margin-top:0px;
+	}
+header .navbar {
+	background-color:#faf9f5;
+	border-radius:0;
+	padding-left:10%;
+	padding-right:10%;
+}
+.breadcrumbs .container {
+	background-color:#fdfcfa;
+	padding-left:10%;
+	padding-right:10%;
+}
+.main .container {
+	padding-left:10%;
+	padding-right:10%;
+}
+.footer-container {
+	padding-bottom:0px;
+}
+footer {
+	margin-bottom:0px;
+	padding-left:10%;
+	padding-right:10%;
+}
+/* CUSTOM BAR */
+.buttons {
+  display: flex;
+}
+.buttons div {
+  margin: 0px 10px;
+  color: inherit;
+  cursor: pointer;
+}
+.buttons div > * {
+  pointer-events: none;
+}
+.wrapper {
+/*  display: grid;
+  grid-template-columns: 1fr 1fr; */
+  width: 100%;
+}
+.wrapper.list {
+  grid-template-columns: 1fr;
+}
+.wrapper.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+}
+.wrapper .col {
+  /*width: calc(100% - 20px);
+  height: 200px;
+  background: #912f40;*/
+  display: flex;
+  /*justify-content: center;
+  align-items: center;
+  color: #fffffa;
+  margin: 10px;*/
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.results_table {
+	width:100%;
+	table-layout: fixed;
+	overflow-wrap: break-word;
+}
+
+tr.results{
+	background-color:red;
+	display:flex;
+
+}
+td.result_col_media{
+	width:100%;
+}
