@@ -34,6 +34,7 @@ footer {
 /* CUSTOM BAR */
 .buttons {
   display: flex;
+  float: right;
 }
 .buttons div {
   margin: 0px 10px;
@@ -69,7 +70,7 @@ footer {
 
 .switch {
   position: relative;
-  display: inline-block;
+  display: grid;
   width: 60px;
   height: 34px;
 }
@@ -121,6 +122,7 @@ input:checked + .slider:before {
 /* Rounded sliders */
 .slider.round {
   border-radius: 34px;
+  height: 34px;
 }
 
 .slider.round:before {
@@ -140,4 +142,33 @@ tr.results{
 }
 td.result_col_media{
 	width:100%;
+}
+/* tool bar */
+.search-controls{
+	display:flex;
+}
+#second-bar{
+	display:flex;
+}
+#choose_records{
+	width:75%;
+}
+#switch_facets{
+	display:flex;
+}
+.bulkActionButtons{
+	display:flex;
+}
+/* HEADER */
+header {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  z-index:1;
+}
+.breadcrumbs {
+	display:none;
+	margin-top:182px;
 }

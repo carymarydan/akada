@@ -4,9 +4,9 @@
       <input type="checkbox" class="checkbox-select-all" name="selectAll" id="<?=$this->idPrefix?>addFormCheckboxSelectAll"<?php if ($this->formAttr): ?> form="<?=$this->escapeHtmlAttr($this->formAttr) ?>"<?php endif; ?>/>
       <label for="<?=$this->idPrefix?>addFormCheckboxSelectAll">
         <?=$this->transEsc('select_page')?>
-        &#124; <?=$this->transEsc('with_selected')?>:
       </label>
     </div>
+    <span><?=$this->transEsc('Vybrané')?>:</span>
     <ul class="action-toolbar">
       <?php if (isset($this->showBulkOptions) && $this->showBulkOptions): ?>
         <li><button id="ribbon-email" class="toolbar-btn btn-type-email" type="submit" name="email" value="1" title="<?=$this->transEscAttr('bookbag_email_selected')?>"<?php if ($this->formAttr): ?> form="<?=$this->escapeHtmlAttr($this->formAttr) ?>"<?php endif; ?>><?=$this->transEsc('Email')?></button></li>

@@ -1,4 +1,13 @@
 $(document).ready(function(){
+	// homepage offset
+	if ( $( ".search-home-facets" ).length ) {
+		$('.main').css('margin-top','82px');
+	}else if ( !$( ".active-filters" ).length ) {
+		$('.main').css('margin-top','140px');
+	}else if ( $('.record-nav').length || $( "#wrapper" ).length) {
+		$('.main').css('margin-top','182px');
+	}
+
         $('#side-switch').click(function(){
     		if($('#side-switch').is(':checked')){
     			$('#search-sidebar').hide();
@@ -20,12 +29,10 @@ $(document).ready(function(){
 	var wrapper = document.getElementById("wrapper");	
 	if(Cookies.get('layout')=='list'){
 		wrapper.classList.add("list");
-		//console.log('YES iT IS');
 	}else if(Cookies.get('layout')=='grid'){
 		wrapper.classList.add("grid");
 	}else if(Cookies.get('layout')=='table'){
 		setTable();
-		//dodelat celou funkci postaveni tabulky
 	}
 
 	$("#grid").click(function (event) {
@@ -34,7 +41,6 @@ $(document).ready(function(){
 		  Cookies.set('layout', 'grid');
 		  wrapper.classList.remove("list");
 		  if ( $("#wrapper").parent().is( "table" ) ) {
-			    //$("#wrapper").unwrap();
 			  unsetTable();
   		  }
 		  wrapper.classList.add("grid");
@@ -46,8 +52,6 @@ $(document).ready(function(){
 		  //console.log('list');
 		  Cookies.set('layout', 'list');
 		  if ( $("#wrapper").parent().is( "table" ) ) {
-			    //$("#wrapper").unwrap();
-			    // unset Table
 			  unsetTable();
   		  }
 		  wrapper.classList.remove("grid");
@@ -95,21 +99,13 @@ $(document).ready(function(){
 		$("#wrapper").unwrap();
 		$( "li.result" ).each(function() {
 			$(this).unwrap();
-                        //$(this).children().children().unwrap();
-
                 });
 		$( "label.record-checkbox" ).each(function() {
-			//$(this).unwrap();
-                        //$(this).children().unwrap();
-			//$(this).parent().remove();
-			console.log($(this).parent());
-
+			$(this).unwrap();
                 });
-                var $set = $("li.result").children();console.log($set.length);
-                for(var i=0, len = $set.length; i < len; i+=6){
-                    $set.slice(i, i+5).unwrap();
-                    $set.slice(i+5, i+6).unwrap();
-                }
+		$( "div.media" ).each(function() {
+			$(this).unwrap();
+                });
 		return;
 	}
 });

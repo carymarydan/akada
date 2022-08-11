@@ -46,7 +46,7 @@
 
 ?>
 
-<div class="<?=$this->layoutClass('mainbody')?>">
+ <div id="main_bar">
   <?php if (($recordTotal = $this->results->getResultTotal()) > 0): // only display these at very top if we have results ?>
     <?php foreach ($this->results->getRecommendations('top') as $index => $current): ?>
       <?=$this->recommend($current, 'top', $index)?>
@@ -67,11 +67,16 @@
 
     <?php if ($recordTotal > 0): ?>
       <div class="search-controls">
-        <?=$this->render('search/controls/limit.phtml')?>
-        <?=$this->render('search/controls/sort.phtml')?>
+	<?=$this->render('search/controls/sort.phtml')?>
+	<?=$this->render('search/controls/limit.phtml')?>
         <?=$this->render('search/controls/view.phtml')?>
       </div>
     <?php endif; ?>
+    <div class="buttons">
+    	<div id="list" class="list"><i class="fa fa-list"></i></div>
+        <div id="table_view" class="table_view"><i class="fa fa-table"></i></div>
+        <div id="grid" class="grid_view"><i class="fa fa-th-large"></i></div>
+    </div>
   </div>
   <?php /* End Listing Options */ ?>
 
@@ -96,9 +101,22 @@
       <?php endif; ?>
     <?php endforeach; ?>
   <?php else: ?>
-    <form id="search-cart-form" method="post" name="bulkActionForm" action="<?=$this->url('cart-searchresultsbulk')?>" data-lightbox data-lightbox-onsubmit="bulkFormHandler">
+   <div id="second-bar">
+	<div id="choose_records">
+    		<form id="search-cart-form" method="post" name="bulkActionForm" action="<?=$this->url('cart-searchresultsbulk')?>" data-lightbox data-lightbox-onsubmit="bulkFormHandler">
       <?=$this->context($this)->renderInContext('search/bulk-action-buttons.phtml', ['idPrefix' => ''])?>
     </form>
+	</div>
+	<div id="switch_facets">
+		<span>Fasety:</span>
+		<label class="switch">
+		<input id="side-switch" type="checkbox">
+		<span class="slider round"></span>
+		</label>
+	</div>
+   </div>
+ </div><!-- end of main_bar -->
+<div class="<?=$this->layoutClass('mainbody')?>">
     <?=$this->render('search/list-' . $this->params->getView() . '.phtml')?>
     <?=$this->context($this)->renderInContext('search/bulk-action-buttons.phtml', ['idPrefix' => 'bottom_', 'formAttr' => 'search-cart-form'])?>
     <?=$this->paginationControl($this->results->getPaginator(), 'Sliding', 'search/pagination.phtml', ['results' => $this->results, 'options' => $this->paginationOptions ?? []])?>
