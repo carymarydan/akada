@@ -73,9 +73,9 @@
       </div>
     <?php endif; ?>
     <div class="buttons">
-    	<div id="list" class="list"><i class="fa fa-list"></i></div>
-        <div id="table_view" class="table_view"><i class="fa fa-table"></i></div>
-        <div id="grid" class="grid_view"><i class="fa fa-th-large"></i></div>
+    	<div id="list" class="list"><i class="ph-rows"></i></div>
+        <div id="table_view" class="table_view"><i class="ph-table"></i></div>
+        <div id="grid" class="grid_view"><i class="ph-squares-four"></i></div>
     </div>
   </div>
   <?php /* End Listing Options */ ?>
@@ -108,11 +108,13 @@
     </form>
 	</div>
 	<div id="switch_facets">
-		<span>Fasety:</span>
+		<div style="float:left;padding-top: 0.5rem;">Fasety:</div>
+		<div style="float:right;padding-top: 0.5rem;text-align:end;">
 		<label class="switch">
 		<input id="side-switch" type="checkbox">
-		<span class="slider round"></span>
+		<i id="toggle_switch" class="ph-toggle-left"></i>
 		</label>
+		</div>
 	</div>
    </div>
  </div><!-- end of main_bar -->

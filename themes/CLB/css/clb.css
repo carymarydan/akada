@@ -70,7 +70,6 @@ footer {
 
 .switch {
   position: relative;
-  display: grid;
   width: 60px;
   height: 34px;
 }
@@ -154,7 +153,9 @@ td.result_col_media{
 	width:75%;
 }
 #switch_facets{
-	display:flex;
+	width:25%;
+	padding-top: 1.2rem;
+	padding-left: 1rem;
 }
 .bulkActionButtons{
 	display:flex;
@@ -171,4 +172,56 @@ header {
 .breadcrumbs {
 	display:none;
 	margin-top:182px;
+}
+.search.container.navbar{
+	width:75%;
+	padding:0;
+}
+.banner.container.navbar{
+	display:flex;
+	border-bottom:1px solid #f3eee5;
+}
+i{
+	font-size:20px;
+}
+.btn-primary i {
+	display: inherit;
+	color: #a7011d;
+}
+.ph-magnifying-glass-bold::before {
+	vertical-align: middle;
+}
+.btn-primary {
+	border-radius: 0;
+	border-color: black;
+	border: 2px solid;
+	color: black;
+}
+.searchForm .btn-primary {
+	padding-right:30px;
+	padding-left:30px;
+}
+.btn-link i {
+	vertical-align:text-bottom;
+	margin-left:10px;
+}
+.btn-link {
+	padding-right:30px;
+	padding-left:30px;
+}
+.toolbar-btn {
+	color:black;
+	background-color:transparent;
+	border:none;
+}
+.toolbar-btn:hover{
+	background-color:transparent;
+	color:#a7011d;
+}
+.media-body {
+	display:contents;
+}
+.search-header {
+	background-color:#fdfcfa;
+	border-bottom: 1px solid #f9f6f2;
 }
