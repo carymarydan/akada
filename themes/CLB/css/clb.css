@@ -25,11 +25,13 @@ header .navbar {
 }
 .footer-container {
 	padding-bottom:0px;
+	padding-left:10%;
+	padding-right:10%;
 }
 footer {
 	margin-bottom:0px;
-	padding-left:10%;
-	padding-right:10%;
+	padding-left:0;
+	padding-right:0;
 }
 /* CUSTOM BAR */
 .buttons {
@@ -92,7 +94,7 @@ footer {
   transition: .4s;
 }
 
-.slider:before {
+/*.slider:before {
   position: absolute;
   content: "";
   height: 26px;
@@ -102,7 +104,7 @@ footer {
   background-color: white;
   -webkit-transition: .4s;
   transition: .4s;
-}
+}*/
 
 input:checked + .slider {
   background-color: #2196F3;
@@ -225,3 +227,276 @@ i{
 	background-color:#fdfcfa;
 	border-bottom: 1px solid #f9f6f2;
 }
+.pager li > a {
+	border:none;
+}
+.pager li > a:hover {
+	background-color:inherit;
+}
+.mainbody.solo {
+	border-top:1px solid;
+	width:100%;
+}
+.record .media {
+	margin-top:30px;
+	margin-bottom:20px;
+}
+.record .media-left.medium {
+	width:25%;
+	margin-left:5%;
+}
+.record .format::after {
+	content:none;
+	text-decoration:none;
+}
+.record .media-left > a {
+	text-decoration:none;
+}
+.format_title {
+	display:flex;
+}
+.record .media-left .format_title > span {
+	position:relative;
+	top:40px;
+	background-color:#a7011d;
+	border-radius:2px;
+	color:white;
+	font-weight:bold;
+	padding: 2px 6px 2px 6px;
+}
+.record .media-body {
+	display:block;
+}
+.table-core > tbody > tr > th {
+	border-top:1px solid #eae1d1;
+	color:#a7011d;
+	width:30%;
+}
+.table-core > tbody > tr > td {
+	border-top:1px solid #eae1d1;
+	width:70%;
+}
+.table-core {
+	table-layout:auto;
+}
+.nav-tabs > li.similar {
+	margin-left:5%;
+}
+.nav-tabs > li{
+	margin-top:0.6em;
+	border:1px solid #eae1d1;
+	margin-right:5px;
+}
+.nav-tabs > li.active{
+	margin-top:0px;
+}
+.nav-tabs > li.active > a{
+	line-height:2em;
+	border:none;
+}
+.nav-tabs > li > a {
+	border:none;
+	border-radius:0;
+}
+.nav-tabs > li.active > a:hover {
+	border:none;
+}
+
+#similar-items-carousel .carousel-item {
+	border:1px solid #eae1d1;
+	margin:5px;
+	flex-basis:20%;
+	margin-left:10px;
+	margin-right:10px;
+}
+.carousel-control.left {
+	background-image:none;
+}
+.carousel-control.right {
+	background-image:none;
+}
+a.carousel-control:focus {
+	outline:none;
+	background-image:none;
+	box-shadow:none;
+}
+#similar-items-carousel .hover-overlay .content {
+	display:block;
+	background-color:transparent;
+	color:black;
+	position:relative;
+}
+.carousel-item {
+	height:280px;
+}
+.carousel-control {
+	width:5%;
+}
+#similar-items-carousel .hover-overlay {
+	min-height:280px;
+	text-decoration:none;
+}
+a.hover-overlay:hover {
+	background-color:#faf9f5;
+}
+.carousel_format {
+	position:absolute;
+	bottom:25px;
+	left:-10px;
+	background-color:#a7011d;
+	padding-left:5px;
+	padding-right:5px;
+	border-radius:2px;
+	color:white;
+	font-weight:bold;
+}
+@media screen and (min-width: 768px) {
+	.carousel-control .ph-arrow-fat-left-bold, .carousel-control .ph-arrow-fat-right-bold {
+		width: 70px;
+		height: 70px;
+		margin-top: -10px;
+		font-size: 70px;
+		position: absolute;
+		top: 50%;
+		z-index: 5;
+		display: inline-block;
+		color:#eae1d1;
+		text-shadow:none;
+		left:-5px;
+	}
+}
+a.carousel-control {
+	opacity:1;
+}
+.tab-content {
+	border:none;
+}
+.record_bottom {
+	border-top:1.5px solid black;
+	margin-top:40px;
+	padding-top:20px;
+}
+.footer-column {
+	display:flex;
+}
+.footer-container ul li {
+	border-bottom:1px solid black;
+}
+.footer-links {
+	margin:40px auto;
+}
+.footer-container strong {
+	margin:0;
+}
+.footer-bottom {
+	background-color:black;
+	color:white;
+	padding: 1.875rem 10% 1.25rem;
+}
+
+
+
+/*UCL web*/
+.social-links__item {
+  color: #bc9665;
+  border-bottom: 0;
+  margin: 0 0.3125rem;
+  text-decoration: none; }
+@media (min-width: 48em) {
+  .social-links__item {
+    margin: 0 0 0 1.25rem;
+    line-height: 0; } }
+@media (min-width: 64em) {
+  .social-links__item {
+    margin-left: 0.625rem; } }
+@media (min-width: 48em) {
+  .social-links__item:first-child {
+    margin-left: 0; } }
+.social-links__item:hover {
+  color: #fff; }
+.icon-wrapper {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    position: relative;
+    margin-bottom: -0.15em;
+}
+.footer {
+  padding: 1.875rem 10% 1.25rem;
+  background-color: #000;
+  color: #fff;
+  position: relative; }
+.footer__in {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 79.375rem; }
+@media (min-width: 48em) {
+  .footer__in {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; } }
+@media (min-width: 48em) {
+  .footer__in > div {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto; } }
+.footer__logo {
+  text-align: center; }
+@media (min-width: 48em) {
+  .footer__logo {
+    text-align: left;
+    -ms-flex-preferred-size: 11.875rem !important;
+    flex-basis: 11.875rem !important; } }
+@media (min-width: 77.5em) {
+  .footer__logo {
+    -ms-flex-preferred-size: 16.25rem !important;
+    flex-basis: 16.25rem !important; } }
+@media (min-width: 99.375em) {
+  .footer__logo {
+    -ms-flex-preferred-size: 26.25rem !important;
+    flex-basis: 26.25rem !important; } }
+.footer__logo img {
+  width: 8.5625rem;
+  border: 0; }
+@media (min-width: 48em) {
+  .footer__logo img {
+    width: auto; } }
+.footer__copy {
+  font-family: "Georgia", serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  text-align: center;
+  margin-top: 1.375rem; }
+@media (min-width: 48em) {
+  .footer__copy {
+    margin-top: 0; } }
+@media (min-width: 64em) {
+  .footer__copy {
+    text-align: left;
+    font-size: 0.875rem; } }
+@media (min-width: 77.5em) {
+  .footer__copy {
+    font-size: 1rem; } }
+.footer__copy br {
+  display: inline-block; }
+@media (min-width: 77.5em) {
+  .footer__copy br {
+    display: none; } }
+.footer__social-links {
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 1.125rem; }
+@media (min-width: 48em) {
+  .footer__social-links {
+    text-align: right;
+    position: relative;
+    margin-top: 0; } }
+@media (min-width: 77.5em) {
+  .footer__social-links {
+    font-size: 2.5rem; } }
+.footer__social-links svg {
+  fill: #a7011d; }
+/* end UCL web */

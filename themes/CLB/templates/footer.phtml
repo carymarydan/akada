@@ -1,42 +1,91 @@
 <footer class="hidden-print">
   <div class="footer-container">
     <div class="footer-column">
-      <a href="https://clb.ucl.cas.cz"><img src="/themes/CLB/images/ucl-clb-logo.png" ></a>
-      <div><b><?=$this->transEsc('Institute of Czech Literature, Czech Academy of Sciences')?></b></div>
-      <div><?=$this->transEsc('Address')?>: Na Florenci 3/1420, 110 00 Praha 1</div>
-      <div>tel: +420 234 612 111 (<?=$this->transEsc('Reception desk')?>)</div>
-      <div>tel: +420 234 612 117 (<?=$this->transEsc('Back office')?>)</div>
-      <div>Email: <a href="mailto:clb@ucl.cas.cz"> clb@ucl.cas.cz</a></div>
-    </div>
-
-    <div class="footer-column">
-      <br><p><strong><?=$this->transEsc('Search Options')?></strong></p>
-      <ul>
-	<li></li>
-        <li><a href="<?=$this->url('search-history')?>"><?=$this->transEsc('Search History')?></a></li>
-<!--        <li><a href="<?=$this->url('search-advanced')?>"><?=$this->transEsc('Advanced Search')?></a></li> -->
-        <li><a href="<?=$this->url('alphabrowse-home')?>"><?=$this->transEsc('Browse Alphabetically')?></a></li>
-        <li><a href="<?=$this->url('browse-home')?>"><?=$this->transEsc('Browse the Catalog')?></a></li>
-        <li><a href="https://clb.ucl.cas.cz/napoveda/"><?=$this->transEsc('Help')?></a></li>
-<!--        <li><a href="<?=$this->url('help-home')?>?topic=search&amp;_=<?=time() ?>" data-lightbox class="help-link"><?=$this->transEsc('Search Tips')?></a></li> -->
-      </ul>
-
-
+      <a style="width:100%;margin-top:40px;" href="https://clb.ucl.cas.cz"><img src="/vufind/themes/CLB/images/ucl-clb-logo.png" ></a>
+      <div style="margin-top:40px;margin-left:30px;margin-right:15px;">
+	      <span><b><?=$this->transEsc('Institute of Czech Literature, Czech Academy of Sciences')?></b></span>
+	      <span><?=$this->transEsc('Address')?>: Na Florenci 3/1420, 110 00 Praha 1</span>
+	      <span>tel: +420 234 612 111 (<?=$this->transEsc('Reception desk')?>)</span>
+	      <span>tel: +420 234 612 117 (<?=$this->transEsc('Back office')?>)</span>
+	      <span>Email: <a href="mailto:clb@ucl.cas.cz"> clb@ucl.cas.cz</a></span>
+      </div>
     </div>
     <div class="footer-column">
-      <br><p><strong><?=$this->transEsc('Quick links')?></strong></p>
-      <ul>
-	<li></li>
-        <li><a href="https://clb.ucl.cas.cz/kontakty/"><?=$this->transEsc('Contacts')?></a></li>
-        <li><a href="https://clb.ucl.cas.cz/lide/"><?=$this->transEsc('People')?></a></li>
-        <li><a href="https://clb.ucl.cas.cz/ochrana-osobnich-udaju/"><?=$this->transEsc('Personal Data Protection')?></a></li>
-        <li><a href="https://clb.ucl.cas.cz/open-access/"><?=$this->transEsc('Open Access')?></a></li>
-        <li><a href="<?=$this->url('content-page', ['page' => 'cookie']) ?>" data-lightbox><?=$this->transEsc('Cookie Policy')?></a></li>
-      </ul>
+	<div class="footer-links">
+	<p><strong><?=$this->transEsc('Search Options')?></strong></p>
+    	  <ul>
+    	    <li></li>
+    	    <li><a href="<?=$this->url('search-history')?>"><?=$this->transEsc('Search History')?></a></li>
+<!--	        <li><a href="<?=$this->url('search-advanced')?>"><?=$this->transEsc('Advanced Search')?></a></li> -->
+    	    <li><a href="<?=$this->url('alphabrowse-home')?>"><?=$this->transEsc('Browse Alphabetically')?></a></li>
+    	    <li><a href="<?=$this->url('browse-home')?>"><?=$this->transEsc('Browse the Catalog')?></a></li>
+    	    <li><a href="https://clb.ucl.cas.cz/napoveda/"><?=$this->transEsc('Help')?></a></li>
+<!--	        <li><a href="<?=$this->url('help-home')?>?topic=search&amp;_=<?=time() ?>" data-lightbox class="help-link"><?=$this->transEsc('Search Tips')?></a></li> -->
+	  </ul>
+	</div>
+	<div class="footer-links">
+   	   <p><strong><?=$this->transEsc('Quick links')?></strong></p>
+   	   <ul>
+   	     <li></li>
+   	     <li><a href="https://clb.ucl.cas.cz/ochrana-osobnich-udaju/"><?=$this->transEsc('Personal Data Protection')?></a></li>
+   	     <li><a href="https://clb.ucl.cas.cz/open-access/"><?=$this->transEsc('Open Access')?></a></li>
+   	     <li><a href="<?=$this->url('content-page', ['page' => 'cookie']) ?>" data-lightbox><?=$this->transEsc('Cookie Policy')?></a></li>
+	   </ul>
+	</div>
+	<div class="footer-links">
+   	   <p><strong><?=$this->transEsc('Contact')?></strong></p>
+   	   <ul>
+   	     <li></li>
+   	     <li><a href="https://clb.ucl.cas.cz/kontakty/"><?=$this->transEsc('Adress and map')?></a></li>
+	     <li><a href="https://clb.ucl.cas.cz/kontakty/"><?=$this->transEsc('Contacts')?></a></li>
+   	     <li><a href="https://clb.ucl.cas.cz/lide/"><?=$this->transEsc('People')?></a></li>
+	   </ul>
+	</div>
     </div>
 
   </div>
- <div style="">Copyright (c) 2018-<?=date('Y')?> <?=$this->transEsc('Institute of Czech Literature, Czech Academy of Sciences')?></div>
+ <footer class="footer-bottom">
+    <div class="footer__in">
+        <div class="footer__logo">
+            <a href="https://ucl.cas.cz/">
+                <img src="https://clb.ucl.cas.cz/wp-content/themes/clb-theme/public/images/logo-l-white.svg" style="width: 40px; margin-right: 30px;" alt="Logo ÚČL AV ČR">
+            </a>
+            <a href="https://www.avcr.cz/">
+                <img src="https://clb.ucl.cas.cz/wp-content/themes/clb-theme/public/images/logo-avcr.png" style="width: 155px" alt="logo Akademie věd České Republiky">
+            </a>
+        </div>
+        <div class="footer__copy">1947—2022 Ústav pro českou literaturu <br>Akademie věd České republiky, v. v. i.</div>
+        <div class="footer__social-links social-links">
+            <a href="https://www.facebook.com/ceskabibliografie/" title="Pokračovat na Facebook profil" target="_blank" class="social-links__item">
+
+<span class="icon-wrapper">
+    <svg class="icon" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M426.8 64H85.2C73.5 64 64 73.5 64 85.2v341.6c0 11.7 9.5 21.2 21.2 21.2H256V296h-45.9v-56H256v-41.4c0-49.6 34.4-76.6 78.7-76.6 21.2 0 44 1.6 49.3 2.3v51.8h-35.3c-24.1 0-28.7 11.4-28.7 28.2V240h57.4l-7.5 56H320v152h106.8c11.7 0 21.2-9.5 21.2-21.2V85.2c0-11.7-9.5-21.2-21.2-21.2z"></path></svg>
+</span>                <span class="sr-only">
+                    Pokračovat na Facebook profil
+                </span>
+            </a>
+
+            <a href="https://www.youtube.com/playlist?list=PLqQrH2L40gN2vxi_VLKty3IAyNh7u6xkG" title="Pokračovat na YouTube kanál" target="_blank" class="social-links__item">
+
+<span class="icon-wrapper">
+    <svg class="icon" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M508.6 148.8c0-45-33.1-81.2-74-81.2C379.2 65 322.7 64 265 64h-18c-57.6 0-114.2 1-169.6 3.6C36.6 67.6 3.5 104 3.5 149 1 184.6-.1 220.2 0 255.8c-.1 35.6 1 71.2 3.4 106.9 0 45 33.1 81.5 73.9 81.5 58.2 2.7 117.9 3.9 178.6 3.8 60.8.2 120.3-1 178.6-3.8 40.9 0 74-36.5 74-81.5 2.4-35.7 3.5-71.3 3.4-107 .2-35.6-.9-71.2-3.3-106.9zM207 353.9V157.4l145 98.2-145 98.3z"></path></svg>
+</span>                <span class="sr-only">
+                    Pokračovat na YouTube kanál
+                </span>
+            </a>
+
+            <a href="https://twitter.com/CzechLitBib" title="Pokračovat na Twitter profil" target="_blank" class="social-links__item">
+
+<span class="icon-wrapper">
+    <svg class="icon" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"><path d="M28,6.937c-0.957,0.425-1.985,0.711-3.064,0.84c1.102-0.66,1.947-1.705,2.345-2.951c-1.03,0.611-2.172,1.055-3.388,1.295 c-0.973-1.037-2.359-1.685-3.893-1.685c-2.946,0-5.334,2.389-5.334,5.334c0,0.418,0.048,0.826,0.138,1.215 c-4.433-0.222-8.363-2.346-10.995-5.574C3.351,6.199,3.088,7.115,3.088,8.094c0,1.85,0.941,3.483,2.372,4.439 c-0.874-0.028-1.697-0.268-2.416-0.667c0,0.023,0,0.044,0,0.067c0,2.585,1.838,4.741,4.279,5.23 c-0.447,0.122-0.919,0.187-1.406,0.187c-0.343,0-0.678-0.034-1.003-0.095c0.679,2.119,2.649,3.662,4.983,3.705 c-1.825,1.431-4.125,2.284-6.625,2.284c-0.43,0-0.855-0.025-1.273-0.075c2.361,1.513,5.164,2.396,8.177,2.396 c9.812,0,15.176-8.128,15.176-15.177c0-0.231-0.005-0.461-0.015-0.69C26.38,8.945,27.285,8.006,28,6.937z"></path></svg>
+</span>
+                <span class="sr-only">
+                    Pokračovat na Twitter profil
+                </span>
+            </a>
+        </div>
+    </div>
+</footer> 
   <div class="poweredby">
     <?=$this->layout()->poweredBy ?>
   </div>
