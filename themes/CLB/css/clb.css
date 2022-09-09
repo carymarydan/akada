@@ -393,6 +393,13 @@ a.carousel-control {
 	color:white;
 	padding: 1.875rem 10% 1.25rem;
 }
+.table-core a {
+	text-decoration:underline;
+	text-decoration-color:#a7011d;
+}
+.table-core i {
+	color:#a7011d;
+}
 
 
 
