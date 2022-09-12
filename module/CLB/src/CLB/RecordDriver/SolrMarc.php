@@ -271,5 +271,70 @@ class SolrMarc extends \VuFind\RecordDriver\SolrMarc
 		return isset($this->fields['original_txt_mv']) ? $this->fields['original_txt_mv'] : '';
 	}
 
+	public function CLB_getResourceInfo() {
+		return isset($this->fields['info_resource_str_mv']) ? $this->fields['info_resource_str_mv'] : '';
+	}
+	
+    /**
+     * Returns one of three things: a full URL to a thumbnail preview of the record
+     * if an image is available in an external system; an array of parameters to
+     * send to VuFind's internal cover generator if no fixed URL exists; or false
+     * if no thumbnail can be generated.
+     *
+     * @param string $size Size of thumbnail (small, medium or large -- small is
+     * default).
+     *
+     * @return string|array|bool
+     */
+    public function getThumbnail($size = 'small')
+    {
+        if (!empty($this->fields['thumbnail'])) {
+            return $this->fields['thumbnail'];
+        }
+        $arr = [
+            'author'     => mb_substr($this->getPrimaryAuthor(), 0, 300, 'utf-8'),
+            'callnumber' => $this->getCallNumber(),
+            'size'       => $size,
+            'title'      => mb_substr($this->getTitle(), 0, 300, 'utf-8'),
+            'recordid'   => $this->getUniqueID(),
+            'source'   => $this->getSourceIdentifier(),
+        ];
+        if ($isbn = $this->getCleanISBN()) {
+            $arr['isbn'] = $isbn;
+        }
+        if ($issn = $this->getCleanISSN()) {
+            $arr['issn'] = $issn;
+        }
+        if ($oclc = $this->getCleanOCLCNum()) {
+            $arr['oclc'] = $oclc;
+        }
+        if ($upc = $this->getCleanUPC()) {
+            $arr['upc'] = $upc;
+        }
+        if ($nbn = $this->getCleanNBN()) {
+            $arr['nbn'] = $nbn['nbn'];
+        }
+        if ($ismn = $this->getCleanISMN()) {
+            $arr['ismn'] = $ismn;
+        }
+        if ($uuid = $this->getCleanUuid()) {
+            $arr['uuid'] = $uuid;
+	}
+	if ($format = $this->getFormats()) {
+            $arr['format'] = $format;
+        }
+
+        // If an ILS driver has injected extra details, check for IDs in there
+        // to fill gaps:
+        if ($ilsDetails = $this->getExtraDetail('ils_details')) {
+            $idTypes = ['isbn', 'issn', 'oclc', 'upc', 'nbn', 'ismn', 'uuid'];
+            foreach ($idTypes as $key) {
+                if (!isset($arr[$key]) && isset($ilsDetails[$key])) {
+                    $arr[$key] = $ilsDetails[$key];
+                }
+            }
+        }
+        return $arr;
+    }
 }
 

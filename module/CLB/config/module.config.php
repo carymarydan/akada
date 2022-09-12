@@ -68,4 +68,26 @@ return array (
       ),
     ),
   ),
+  'service_manager' => 
+  array (
+    'factories' => 
+    array (
+      'CLB\\Cover\\Loader' => 'VuFind\\Cover\\LoaderFactory',
+    ),
+    'aliases' => 
+    array (
+      'VuFind\\Cover\\Loader' => 'CLB\\Cover\\Loader',
+    ),
+  ),
+  'controllers' => 
+  array (
+    'factories' => 
+    array (
+      'CLB\\Controller\\CoverController' => 'VuFind\\Controller\\CoverControllerFactory',
+    ),     
+    'aliases' => 
+    array (
+      'VuFind\\Controller\\CoverController' => 'CLB\\Controller\\CoverController',
+    ),
+  ),
 );
