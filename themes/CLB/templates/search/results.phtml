@@ -108,7 +108,7 @@
     </form>
 	</div>
 	<div id="switch_facets">
-		<div style="float:left;padding-top: 0.5rem;">Fasety:</div>
+		<div style="float:left;padding-top: 0.5rem;"><?=$this->transEsc($this->slot('side-facet-caption')->get('Narrow Search')) ?>:</div>
 		<div style="float:right;padding-top: 0.5rem;text-align:end;">
 		<label class="switch">
 		<input id="side-switch" type="checkbox">
@@ -122,7 +122,6 @@
     <?=$this->render('search/list-' . $this->params->getView() . '.phtml')?>
     <?=$this->context($this)->renderInContext('search/bulk-action-buttons.phtml', ['idPrefix' => 'bottom_', 'formAttr' => 'search-cart-form'])?>
     <?=$this->paginationControl($this->results->getPaginator(), 'Sliding', 'search/pagination.phtml', ['results' => $this->results, 'options' => $this->paginationOptions ?? []])?>
-    <?=$this->context($this)->renderInContext('search/controls/results-tools.phtml', ['results' => $this->results])?>
   <?php endif; ?>
 </div>
 <?php /* End Main Listing */ ?>

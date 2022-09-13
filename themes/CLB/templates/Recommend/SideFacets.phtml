@@ -28,7 +28,6 @@
 ?>
 <button class="close-offcanvas btn btn-link" data-toggle="offcanvas"><?=$this->transEsc('navigate_back') ?></button>
 <?php if ($results->getResultTotal() > 0): ?>
-  <h4><?=$this->transEsc($this->slot('side-facet-caption')->get('Narrow Search')) ?></h4>
 <?php endif; ?>
 <?php $checkboxFilters = $this->recommend->getCheckboxFacetSet(); ?>
 <?php $checkboxesShown = false; ?>
@@ -54,7 +53,8 @@
   <?php foreach ($sideFacetSet as $title => $cluster): ?>
     <div class="facet-group" id="side-panel-<?=$this->escapeHtmlAttr($title) ?>">
       <button class="title<?php if (in_array($title, $collapsedFacets)): ?> collapsed<?php endif ?>" data-toggle="collapse" href="#side-collapse-<?=$this->escapeHtmlAttr($title) ?>" >
-        <?=$this->transEsc($cluster['label'])?>
+	<?=$this->transEsc($cluster['label'])?>
+	<i class="ph-caret-up" style="float:right;color:#b01c35;"></i>
       </button>
       <div id="side-collapse-<?=$this->escapeHtmlAttr($title) ?>" class="collapse<?php if (!in_array($title, $collapsedFacets)): ?> in<?php endif ?>"<?php if (in_array($title, $forceUncollapsedFacets)): ?> data-force-in="1"<?php endif ?>>
         <?=

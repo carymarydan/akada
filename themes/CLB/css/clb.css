@@ -56,7 +56,7 @@ footer {
 }
 .wrapper.grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   width: 100%;
 }
 .wrapper .col {
@@ -164,7 +164,7 @@ td.result_col_media{
 }
 /* HEADER */
 header {
-  overflow: hidden;
+  /*overflow: hidden;*/
   background-color: #333;
   position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
@@ -400,8 +400,95 @@ a.carousel-control {
 .table-core i {
 	color:#a7011d;
 }
+/* FACETS */
+.sidebar .facet-group {
+	background-color:#fdfcfa;
+	margin-bottom:15%;
+}
+.sidebar .facet.active {
+	background-color:#eae1d1 !important;
+	border:none;
+	color:inherit;
+}
+.facet-group .facet {
+	border:none;
+}
+.badge {
+	color:#b01c35;
+	background-color:inherit;
+	border-radius:0;
+}
+.facet-group .title {
+	border:none;
+	border-top:1px solid black;
+	border-bottom:1px solid black;
+	padding:20px;
+}
+.facet-group .collapse {
+	border:none;
+	border-bottom:1px solid black;
+}
+.facet-group [data-toggle="collapse"]::after {
+	content:none;
+}
+.facet-group .collapsed::after {
+	content:none;
+}
+.facet-group .collapsed .ph-caret-up::before {
+    content: "\f31a";
+}
 
+/* RESULTS LIST */
+.result .title {
+	font-size:1.5rem;
+}
+@media (min-width: 768px) {
+	.result .media-left.medium {
+		width:20%;
+	}
+}
+.wrapper.grid > .col > .media{
+	display:block;
+}
+.wrapper.grid > .col {
+	/*width:50%;*/
+}
+.pagination > .active > span {
+	z-index:auto;
+	color:#b01c35;
+	background-color:white !important;
+	border:3px solid #b01c35;
+	margin:10px;
+	padding:20px;
+        width:60px;
+        height:60px;
+        font-weight:bold;
+        text-align:center;
+}
 
+.pagination > li > a {
+	margin:10px;
+	color:inherit;
+	border:3px solid black;
+	padding:20px;
+	width:60px;
+	height:60px;
+	font-weight:bold;
+	text-align:center;
+}
+li.page-button-arrow > a {
+	padding:8px;
+        width:40px;
+        height:40px;
+        font-weight:bold;
+        text-align:center;
+	margin-top:20px;
+}
+div.bulk-checkbox > label {
+	font-weight:normal;
+	margin-top:10px;
+	margin-left:5px;
+}
 
 /*UCL web*/
 .social-links__item {

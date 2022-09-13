@@ -1,0 +1,41 @@
+<?php if ($this->pageCount): ?>
+  <ul class="pagination" aria-label="<?=$this->transEscAttr('pagination_label')?>">
+    <?php if (isset($this->previous)): ?>
+      <?php if (!isset($this->options['disableFirst']) || !$this->options['disableFirst']): ?>
+        <li class="page-button-arrow" role="none">
+          <a href="<?=$this->currentPath() . $this->results->getUrlQuery()->setPage(1)?>" aria-label="<?=$this->transEscAttr('page_first')?>"><i class="ph-arrow-line-left-bold"></i></a>
+        </li>
+      <?php endif; ?>
+      <li class="page-button-arrow" role="none">
+        <a class="page-prev" href="<?=$this->currentPath() . $this->results->getUrlQuery()->setPage($this->previous)?>" aria-label="<?=$this->transEscAttr('page_prev')?>">
+	  <i class="ph-arrow-left-bold"></i>
+        </a>
+      </li>
+    <?php endif; ?>
+
+    <?php if (count($this->pagesInRange) > 1): ?>
+      <?php foreach ($this->pagesInRange as $page): ?>
+        <?php if ($page != $this->current): ?>
+          <li class="page-button" role="none">
+            <a href="<?=$this->currentPath() . $this->results->getUrlQuery()->setPage($page)?>" aria-label="<?=$this->transEscAttr('page_no', ['%%page%%' => $page])?>"><?=$page?></a>
+          </li>
+        <?php else: ?>
+          <li role="none" class="page-button active" aria-current="page"><span><?=$page?></span></li>
+        <?php endif; ?>
+      <?php endforeach; ?>
+    <?php endif; ?>
+
+    <?php if (isset($this->next)): ?>
+      <li class="page-button-arrow" role="none">
+        <a class="page-next" href="<?=$this->currentPath() . $this->results->getUrlQuery()->setPage($this->next)?>" aria-label="<?=$this->transEscAttr('page_next')?>">
+	  <i class="ph-arrow-right-bold"></i>
+        </a>
+      </li>
+      <?php if (!isset($this->options['disableLast']) || !$this->options['disableLast']): ?>
+        <li class="page-button-arrow" role="none">
+          <a href="<?=$this->currentPath() . $this->results->getUrlQuery()->setPage($this->pageCount)?>" aria-label="<?=$this->transEscAttr('page_last')?>"><i class="ph-arrow-line-right-bold"></i></a>
+        </li>
+      <?php endif; ?>
+    <?php endif; ?>
+  </ul>
+<?php endif; ?>
