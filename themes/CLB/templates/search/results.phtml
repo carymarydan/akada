@@ -56,7 +56,10 @@
   <div class="search-header hidden-print">
     <div class="search-stats">
       <?php if ($recordTotal > 0): ?>
-        <?=$this->context()->renderInContext('search/controls/showing.phtml', ['lookfor' => $lookfor, 'recordTotal' => $recordTotal]) ?>
+	<?=$this->paginationControl($this->results->getPaginator(), 'Sliding', 'search/pagination-top.phtml', ['results' => $this->results, 'options' => $this->paginationOptions ?? []])?>
+	<div style="margin:auto 0;">
+	<?=$this->context()->renderInContext('search/controls/showing.phtml', ['lookfor' => $lookfor, 'recordTotal' => $recordTotal]) ?>
+	</div>
         <a class="search-filter-toggle visible-xs" href="#search-sidebar" data-toggle="offcanvas" title="<?=$this->transEscAttr('sidebar_expand') ?>">
           <?=$this->transEsc('Refine Results') ?>
         </a>

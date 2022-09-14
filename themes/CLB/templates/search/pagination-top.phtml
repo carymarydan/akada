@@ -1,0 +1,15 @@
+<?php if ($this->pageCount): ?>
+  <ul class="pagination" style="display:block;margin:0;" aria-label="<?=$this->transEscAttr('pagination_label')?>">
+      <li class="page-button-arrow" role="none">
+        <a class="top page-prev" href="<?=$this->currentPath() . $this->results->getUrlQuery()->setPage($this->previous)?>" aria-label="<?=$this->transEscAttr('page_prev')?>">
+	  <i class="ph-arrow-left-bold"></i>
+        </a>
+      </li>
+
+      <li class="page-button-arrow" role="none">
+        <a class="top page-next" href="<?=$this->currentPath() . $this->results->getUrlQuery()->setPage($this->next)?>" aria-label="<?=$this->transEscAttr('page_next')?>">
+	  <i class="ph-arrow-right-bold"></i>
+        </a>
+      </li> 
+  </ul>
+<?php endif; ?>

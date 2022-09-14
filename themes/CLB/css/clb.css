@@ -37,6 +37,7 @@ footer {
 .buttons {
   display: flex;
   float: right;
+  margin:auto;
 }
 .buttons div {
   margin: 0px 10px;
@@ -150,6 +151,18 @@ td.result_col_media{
 /* tool bar */
 .search-controls{
 	display:flex;
+	width:30%;
+	margin:auto;
+}
+.search-result-limit {
+	margin-left:10%;
+}
+.search-header {
+	height:85px;
+}
+.search-stats {
+	/*padding: 35px 0;*/
+	display:flex;
 }
 #second-bar{
 	display:flex;
@@ -189,6 +202,10 @@ header {
 i{
 	font-size:20px;
 }
+.btn-primary:hover {
+	background-color:inherit;
+	color:inherit;
+}
 .btn-primary i {
 	display: inherit;
 	color: #a7011d;
@@ -209,10 +226,15 @@ i{
 .btn-link i {
 	vertical-align:text-bottom;
 	margin-left:10px;
+	text-decoration:none;
 }
 .btn-link {
 	padding-right:30px;
 	padding-left:30px;
+	text-decoration:none;
+}
+.btn-link:hover {
+	text-decoration:none;
 }
 .toolbar-btn {
 	color:black;
@@ -229,6 +251,10 @@ i{
 .search-header {
 	background-color:#fdfcfa;
 	border-bottom: 1px solid #f9f6f2;
+	margin-left: -13%;
+	margin-right: -13%;
+	padding-left: 13%;
+	padding-right: 13%;
 }
 .pager li > a {
 	border:none;
@@ -479,6 +505,11 @@ a.carousel-control {
 	font-weight:bold;
 	text-align:center;
 }
+.pagination > li > a.top {
+	border:none;
+	margin-top:16px;
+	background-color:inherit;
+}
 li.page-button-arrow > a {
 	padding:8px;
         width:40px;
@@ -497,6 +528,9 @@ div.bulk-checkbox > label {
 }
 li.result {
 	border-bottom:1px solid black;
+}
+form input[type=checkbox] {
+	height:auto;
 }
 /*UCL web*/
 .social-links__item {
