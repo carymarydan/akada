@@ -22,6 +22,7 @@ header .navbar {
 .main .container {
 	padding-left:10%;
 	padding-right:10%;
+	padding-top:0px;
 }
 .footer-container {
 	padding-bottom:0px;
@@ -532,6 +533,30 @@ li.result {
 form input[type=checkbox] {
 	height:auto;
 }
+.dedication {
+	height:195px;
+	background-color:#a7011d;
+	color:white;
+	display:flex;
+}
+.dedication > .hand {
+	width:65%;
+	text-align:right;
+	margin:auto;
+	padding-right:50px;
+}
+.dedication > .hand > i{
+	font-size:100px;
+}
+.dedication > .warning {
+	margin:auto 2rem;
+	font-size:1.2rem;
+}
+.dedication > .confirm {
+	width:100%;
+	margin:auto;
+}
+
 /*UCL web*/
 .social-links__item {
   color: #bc9665;

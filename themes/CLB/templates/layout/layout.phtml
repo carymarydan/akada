@@ -120,6 +120,17 @@ JS;
         <span class="sr-only" role="heading" aria-level="1"><?=$this->layout()->srmessage ?></span>
       <?php endif; ?>
       <a class="sr-only" href="#content"><?=$this->transEsc('Skip to content') ?></a>
+	<div class="dedication hidden">
+		<div class="hand">
+			<i class="ph-hand-palm"></i>
+		</div>
+		<div class="warning">
+			<?=$this->translate('SearchWarning')?>
+		</div>
+		<div class="confirm">
+			<button id="confirm_dedication" class="btn btn-primary" style="display:flex;"> <?php echo(strtoupper('budu dodržovat')); ?><i class="ph-checks-bold" style="margin-left:10px;margin-top:-2px;"></i></button>
+		</div>
+	</div>
       <?=$this->render('header.phtml')?>
     </header>
     <nav class="breadcrumbs" aria-label="<?=$this->transEscAttr('Breadcrumbs') ?>">

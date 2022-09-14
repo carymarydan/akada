@@ -1,15 +1,32 @@
 $(document).ready(function(){
+	//dedication
+	$( "#confirm_dedication" ).click(function() {
+		$(".dedication").hide();
+		setHomepageOffset(82, 102);
+		Cookies.set('dedication', 'yes');
+	});
+	if(Cookies.get('dedication')!='yes'){
+		$(".dedication").removeClass('hidden');
+		//82, 102
+		setHomepageOffset(277, 297);
+	}else{
+		setHomepageOffset(82, 102);
+	}
+
+function setHomepageOffset(one, two){
+// one = 82, 277
+// two = 102, 297
 	// homepage offset
 	if ( $( ".search-home-facets" ).length ) {
-		$('.main').css('margin-top','82px');
+		$('.main').css('margin-top', one+'px');
 		$('#title_text').css('display','inline-block');
 		$('.navbar-header').css('margin-right','50%');
 	}else if ( !$( ".active-filters" ).length ) {
-		$('.main').css('margin-top','82px');
+		$('.main').css('margin-top', one+'px');
 	}else if ( $('.record-nav').length || $( "#wrapper" ).length) {
-		$('.main').css('margin-top','102px');
+		$('.main').css('margin-top', two+'px');
 	}
-
+}
 	var toggle_switch = document.getElementById("toggle_switch");
         $('#side-switch').click(function(){
     		if($('#side-switch').is(':checked')){
