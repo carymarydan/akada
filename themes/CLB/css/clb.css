@@ -46,6 +46,9 @@ footer {
 .buttons div > * {
   pointer-events: none;
 }
+#wrapper {
+	border-top:1px solid black;
+}
 .wrapper {
 /*  display: grid;
   grid-template-columns: 1fr 1fr; */
@@ -489,7 +492,12 @@ div.bulk-checkbox > label {
 	margin-top:10px;
 	margin-left:5px;
 }
-
+.result:nth-child(even) {
+	background-color:inherit;
+}
+li.result {
+	border-bottom:1px solid black;
+}
 /*UCL web*/
 .social-links__item {
   color: #bc9665;
