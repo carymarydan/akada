@@ -10,9 +10,9 @@
   <?php if ($QRCode || $cover || $preview): ?>
     <div class="media-left <?=$this->escapeHtmlAttr($coverDetails['size'])?> img-col">
       <?php /* Display thumbnail if appropriate: */ ?>
-      <div class="format_title" style="display:flex;">
+      <!--<div class="format_title" style="display:flex;">
 	<?php $formats = $this->record($this->driver)->getFormatList(); print_r(strtoupper($formats));?>
-      </div>
+      </div>-->
       <div>
       <?php if($cover): ?>
         <?=$cover?>

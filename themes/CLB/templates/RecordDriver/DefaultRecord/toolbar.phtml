@@ -4,7 +4,7 @@
     $this->headScript()->appendFile('https://s7.addthis.com/js/250/addthis_widget.js?pub=' . urlencode($addThis));
   }
 ?>
-<nav class="record-nav" style="float:right;">
+<nav class="record-nav" style="float:right;padding-top:1rem;margin-bottom:0;">
   <ul class="action-toolbar" aria-label="<?=$this->transEscAttr('ajaxview_label_tools'); ?>">
       <li role="none"><a class="permalink-record toolbar-btn" data-lightbox href="<?=$this->escapeHtmlAttr($this->recordLinker()->getActionUrl($this->driver, 'Permalink'))?>" rel="nofollow"><i class="ph-link"></i></a></li> 
     <?php if ($this->accountCapabilities()->getSmsSetting() !== 'disabled'): ?>

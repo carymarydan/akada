@@ -2,6 +2,13 @@
 <?php if ($this->link && !empty($alt)): ?><a href="<?=$this->escapeHtmlAttr($this->link)?>" class="record-cover-link"><?php endif; ?>
 <?php /* Display thumbnail if appropriate: */ ?>
 <?php if ($cover): ?>
+<div class="format_title" style="display:flex;">
+<?php foreach ($this->driver->getFormats() as $format): ?>
+  <?php if ($translated = $this->transEsc($format)): ?>
+    <span class="<?=$this->record($this->driver)->getFormatClass($format) ?>"><?=strtoupper($translated) ?></span>
+  <?php endif; ?>
+<?php endforeach; ?>	
+</div>
   <img src="<?=$this->escapeHtmlAttr($cover); ?>" <?php if ($linkPreview): ?>data-linkpreview="true" <?php endif; ?>class="recordcover" alt="<?=$this->escapeHtmlAttr($alt); ?>" />
 <?php elseif ($cover === false): ?>
   <img src="<?=$this->url('cover-unavailable')?>" <?php if ($linkPreview): ?>data-linkpreview="true" <?php endif; ?>class="recordcover" alt="" />

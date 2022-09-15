@@ -29,9 +29,9 @@
           </div>
         <?php endforeach; ?>
       </div>
-      <span class="tag">
-	<i class="ph-tag"></i><?=$this->transEsc($this->driver->CLB_getResourceInfo())?>
-      </span>
+      <div class="tag">
+	<i class="ph-tag"></i><span><?=$this->transEsc($this->driver->CLB_getResourceInfo())?></span>
+      </div>
       <div>
         <?php if($this->driver->isCollection()): ?>
           <?=implode('<br>', array_map([$this, 'escapeHtml'], $this->driver->getSummary())); ?>
@@ -166,7 +166,6 @@
       <?php endif; ?>
 
       <div class="result-formats">
-        <?=$this->record($this->driver)->getFormatList() ?>
 
         <?php if (!$openUrlActive && empty($urls) && $this->driver->supportsAjaxStatus()): ?>
           <span class="status ajax-availability hidden">
@@ -203,7 +202,7 @@
       <?php if ($this->userlist()->getMode() !== 'disabled'): ?>
         <?php if ($this->permission()->allowDisplay('feature.Favorites')): ?>
           <?php /* Add to favorites */ ?>
-          <a style="color:#a7011d;text-decoration:none;height:100%;" href="<?=$this->escapeHtmlAttr($this->recordLinker()->getActionUrl($this->driver, 'Save'))?>" data-lightbox class="save-record" data-id="<?=$this->escapeHtmlAttr($this->driver->getUniqueId()) ?>">
+          <a style="color:#a7011d;text-decoration:none;" href="<?=$this->escapeHtmlAttr($this->recordLinker()->getActionUrl($this->driver, 'Save'))?>" data-lightbox class="save-record" data-id="<?=$this->escapeHtmlAttr($this->driver->getUniqueId()) ?>">
             <i class="ph-heart-straight" aria-hidden="true"></i>
           </a><br/>
         <?php elseif ($block = $this->permission()->getAlternateContent('feature.Favorites')): ?>
@@ -214,7 +213,13 @@
           <strong><?=$this->transEsc("Saved in")?>:</strong>
         </div>
       <?php endif; ?>
-
+	<div style="height:70%;">
+	</div>
+	<a style="text-decoration:none;" href="<?=$this->escapeHtmlAttr($this->recordLinker()->getUrl($this->driver))?>">
+	<div class="enter" style="color:#a7011d;">
+		<i class="ph-arrow-right-bold"></i>
+	</div>
+	</a>
       <?php /* Hierarchy tree link */ ?>
       <?php $trees = $this->driver->tryMethod('getHierarchyTrees'); if (!empty($trees)): ?>
         <?php foreach ($trees as $hierarchyID => $hierarchyTitle): ?>
