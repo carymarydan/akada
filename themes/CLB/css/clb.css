@@ -7,12 +7,14 @@ html {
 }
 header {
 	margin-top:0px;
+	height:128px;
+	display:flex;
 	}
 header .navbar {
 	background-color:#faf9f5;
 	border-radius:0;
 	padding-left:10%;
-	padding-right:10%;
+	/*padding-right:10%;*/
 }
 .breadcrumbs .container {
 	background-color:#fdfcfa;
@@ -158,9 +160,6 @@ td.result_col_media{
 .search-result-limit {
 	margin-left:10%;
 }
-.search-header {
-	height:85px;
-}
 .search-stats {
 	/*padding: 35px 0;*/
 	display:flex;
@@ -188,6 +187,14 @@ header {
   width: 100%; /* Full width */
   z-index:1;
 }
+@media (min-width: 768px) {
+	.container > .navbar-collapse {
+		margin:auto;
+	}
+}
+.navbar-header {
+	margin:auto;
+}
 .breadcrumbs {
 	display:none;
 	margin-top:182px;
@@ -195,10 +202,12 @@ header {
 .search.container.navbar{
 	width:75%;
 	padding:0;
+	margin:auto;
 }
 .banner.container.navbar{
 	display:flex;
 	border-bottom:1px solid #f3eee5;
+	height:100%;
 }
 i{
 	font-size:20px;
@@ -252,10 +261,11 @@ i{
 .search-header {
 	background-color:#fdfcfa;
 	border-bottom: 1px solid #f9f6f2;
-	margin-left: -13%;
-	margin-right: -13%;
-	padding-left: 13%;
-	padding-right: 13%;
+	margin-left: -12%;
+	margin-right: -12%;
+	padding-left: 12%;
+	padding-right: 12%;
+	height:85px;
 }
 .pager li > a {
 	border:none;
@@ -534,7 +544,7 @@ form input[type=checkbox] {
 	height:auto;
 }
 .dedication {
-	height:195px;
+	height:185px;
 	background-color:#a7011d;
 	color:white;
 	display:flex;
@@ -556,7 +566,31 @@ form input[type=checkbox] {
 	width:100%;
 	margin:auto;
 }
-
+.dedic_min {
+	background-color:#faf9f5;
+	width:10%;
+	display:flex;
+}
+span.text-vert {
+	writing-mode: tb-rl;
+	transform: rotate(-180deg);
+	font-size:12px;
+	margin:auto;
+}
+.dedic_min > button {
+	width:75px;
+	height:75px;
+}
+.dedic_div {
+	margin: auto 0;
+	width:75px;
+	height:75px;
+	background-color:#a7011d;
+	color:white;
+	display:flex;
+	margin-left:45%;
+	border:none;
+}
 /*UCL web*/
 .social-links__item {
   color: #bc9665;

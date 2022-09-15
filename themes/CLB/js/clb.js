@@ -2,20 +2,38 @@ $(document).ready(function(){
 	//dedication
 	$( "#confirm_dedication" ).click(function() {
 		$(".dedication").hide();
-		setHomepageOffset(82, 102);
+		$("#ded_div").removeClass('hidden');
+		$("header .navbar").css("padding-right","0");
+		$("header").css("display","flex");
+		setHomepageOffset(128, 148);
 		Cookies.set('dedication', 'yes');
+		location.reload(true);
 	});
-	if(Cookies.get('dedication')!='yes'){
+	$( "#ded_div" ).click(function() {
 		$(".dedication").removeClass('hidden');
+		$( "#ded_div" ).hide();
+		$("header .navbar").css("padding-right","10%");
+		$("header").css("display","block");
+		Cookies.set('dedication', 'no');
+		location.reload(true);
+	});
+
+	if(Cookies.get('dedication')!='yes'){
+		console.log("D neni");
+		$(".dedication").removeClass('hidden');
+		$("header .navbar").css("padding-right","10%");
+		$("header").css("display","block");
 		//82, 102
-		setHomepageOffset(277, 297);
+		setHomepageOffset(313, 313);
 	}else{
-		setHomepageOffset(82, 102);
+		console.log("D JE");
+		$("#ded_div").removeClass('hidden');
+		setHomepageOffset(128, 128);
 	}
 
 function setHomepageOffset(one, two){
-// one = 82, 277
-// two = 102, 297
+// one = 82, 277 +46-10,
+// two = 102, 297 +46-10,
 	// homepage offset
 	if ( $( ".search-home-facets" ).length ) {
 		$('.main').css('margin-top', one+'px');
