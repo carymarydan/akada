@@ -9,11 +9,20 @@
 		<th>Typ</th>
 		<th>Název</th>
 		<th>Hlavní autor</th>
+		<th>Rok</th>
+		<th>Zdroj/nakladatel</th>
+		<th>URL</th>
 	</tr>
 </thead>
 <tbody>
   <?php foreach ($this->results->getResults() as $current): ?>
+    <?php $recordNumber = $this->results->getStartRecord() + $i - $this->indexStart; ?>
     <tr id="result<?=$i++ ?>" class="col <?=$current->supportsAjaxStatus()?' ajaxItem':''?>">
+      <?php if (isset($this->showCheckboxes) && $this->showCheckboxes): ?>
+	<td>
+         <?=$this->record($current)->getCheckbox('', 'search-cart-form', $recordNumber)?>
+	</td>
+      <?php endif; ?>
       <?=$this->record($current)->getSearchResult('table')?>
     </tr>
   <?php endforeach; ?>

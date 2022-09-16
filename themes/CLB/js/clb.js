@@ -69,7 +69,12 @@ $(document).ready(function(){
         });
 	if(Cookies.get('facets')=='no'){
 		//$('#side-switch').prop('checked', true);
-		$('#side-switch').click();
+		//$('#side-switch').click();
+		$('#search-sidebar').hide();
+                $('.mainbody').css("width","100%");
+                toggle_switch.classList.remove("ph-toggle-left");
+                toggle_switch.classList.add("ph-toggle-right");
+                $('#toggle_switch').css('color','#a7011d');
 	}
 
 //	var wrapper = document.getElementById("wrapper");	

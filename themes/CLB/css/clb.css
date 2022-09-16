@@ -340,6 +340,9 @@ i{
 	font-weight:bold;
 	padding: 2px 6px 2px 6px;
 }
+td.media > div > a > div.format_title {
+	display:none;
+}
 .record .media-body {
 	display:block;
 }
