@@ -103,6 +103,8 @@ JS;
     ?>
     <?=$this->headScript() ?>
     <script src="https://unpkg.com/phosphor-icons"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
   </head>
   <body class="template-dir-<?=$this->templateDir?> template-name-<?=$this->templateName?> <?=$this->layoutClass('offcanvas-row')?><?php if ($this->layout()->rtl): ?> rtl<?php endif; ?>">
     <?php // Set up the search box -- there are three possible cases:

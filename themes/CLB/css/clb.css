@@ -50,6 +50,13 @@ footer {
 .buttons div > * {
   pointer-events: none;
 }
+button#list, #table_view, #grid {
+	border:none;
+	background-color:transparent;
+}
+.buttons > button > a {
+	text-decoration:none;
+}
 #wrapper {
 	border-top:1px solid black;
 }

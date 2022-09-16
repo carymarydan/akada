@@ -1,0 +1,21 @@
+<?php if (!isset($this->indexStart)) $this->indexStart = 0; ?>
+<?php $i = $this->indexStart; ?>
+<?php $listStart = $this->results->getStartRecord() + $i - $this->indexStart; ?>
+<table id="wrapper-table" class="" start="<?=$listStart?>">
+<thead>
+	<tr>
+		<th>#</th>
+		<th>Báze</th>
+		<th>Typ</th>
+		<th>Název</th>
+		<th>Hlavní autor</th>
+	</tr>
+</thead>
+<tbody>
+  <?php foreach ($this->results->getResults() as $current): ?>
+    <tr id="result<?=$i++ ?>" class="col <?=$current->supportsAjaxStatus()?' ajaxItem':''?>">
+      <?=$this->record($current)->getSearchResult('table')?>
+    </tr>
+  <?php endforeach; ?>
+</tbody>
+</table>

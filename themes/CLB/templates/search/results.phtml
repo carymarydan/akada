@@ -76,9 +76,9 @@
       </div>
     <?php endif; ?>
     <div class="buttons">
-    	<div id="list" class="list"><i class="ph-rows"></i></div>
-        <div id="table_view" class="table_view"><i class="ph-table"></i></div>
-        <div id="grid" class="grid_view"><i class="ph-squares-four"></i></div>
+    	<button id="list" class="list"><a href="<?=$this->results->getUrlQuery()->setViewParam('list')?>" title="<?=$this->transEscAttr('switch_view', ['%%view%%' => 'List'])?>" ><i class="ph-rows"></i></a></button>
+        <button id="table_view" class="table_view"><a href="<?=$this->results->getUrlQuery()->setViewParam('table')?>" title="<?=$this->transEscAttr('switch_view', ['%%view%%' => 'Table'])?>" ><i class="ph-table"></i></button>
+        <button id="grid" class="grid_view"><a href="<?=$this->results->getUrlQuery()->setViewParam('grid')?>" title="<?=$this->transEscAttr('switch_view', ['%%view%%' => 'Grid'])?>" ><i class="ph-squares-four"></i></button>
     </div>
   </div>
   <?php /* End Listing Options */ ?>
