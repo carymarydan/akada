@@ -1,4 +1,4 @@
-<nav style="float:left;" aria-label="<?=$this->transEscAttr('Search Results')?>">
+<nav style="float:left;margin-top:1rem;" aria-label="<?=$this->transEscAttr('Search Results')?>">
   <ul class="pager hidden-print">
     <?php if ($this->scrollData['previousRecord']): ?>
       <?php if ($this->scrollData['firstRecord']): ?>
@@ -11,20 +11,20 @@
       <?php endif; ?>
       <li role="none">
         <a href="<?=$this->escapeHtmlAttr($this->recordLinker()->getUrl($this->scrollData['previousRecord']))?>" aria-label="<?=$this->transEscAttr('Previous Search Result')?>" rel="nofollow">
-          <i class="ph-arrow-left-bold"></i>
+          <i class="ph-arrow-left"></i>
         </a>
       </li>
     <?php else: ?>
       <?php if ($this->scrollData['firstRecord']): ?>
         <li class="disabled" aria-hidden="true" role="none"><a href="#"><i class="fa fa-angle-double-left"></i> <?=$this->transEsc('First')?></a></li>
       <?php endif; ?>
-      <li class="disabled" aria-hidden="true" role="none"><a href="#"><i class="ph-arrow-left-bold"></i></a></li>
+      <li class="disabled" aria-hidden="true" role="none"><a href="#"><i class="ph-arrow-left"></i></a></li>
     <?php endif; ?> 
 
     <?php if ($this->scrollData['nextRecord']): ?>
       <li role="none">
         <a href="<?=$this->escapeHtmlAttr($this->recordLinker()->getUrl($this->scrollData['nextRecord']))?>" aria-label="<?=$this->transEscAttr('Next Search Result')?>" rel="nofollow">
-          <i class="ph-arrow-right-bold"></i>
+          <i class="ph-arrow-right"></i>
         </a>
       </li>
       <?php if ($this->scrollData['lastRecord']): ?>
@@ -36,7 +36,7 @@
         </li>
       <?php endif; ?>
     <?php else: ?>
-      <li class="disabled" aria-hidden="true" role="none"><a href="#"><i class="ph-arrow-right-bold"></i></a></li>
+      <li class="disabled" aria-hidden="true" role="none"><a href="#"><i class="ph-arrow-right"></i></a></li>
       <?php if ($this->scrollData['lastRecord']): ?>
         <li class="disabled" aria-hidden="true" role="none"><a href="#"><?=$this->transEsc('Last')?> <i class="fa fa-angle-double-right"></i></a></li>
       <?php endif; ?>
