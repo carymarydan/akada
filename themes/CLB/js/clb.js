@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
 	$('#wrapper-table').DataTable();
 	//dedication
 	$( "#confirm_dedication" ).click(function() {
@@ -32,6 +33,20 @@ $(document).ready(function(){
 		setHomepageOffset(128, 128);
 	}
 
+// alternativa schovani dedikace
+//	$("#confirm_dedication").click(function () {
+//		if ($(this).html() == "-") {
+//		    $(this).html("+");
+//		} else {
+//		    $(this).html("-");
+//		}
+//		var thisParent = $(this).parent().parent();console.log($(thisParent));
+//		$(thisParent).slideToggle();
+//		$('.main').css('margin-top', '128px');
+//		console.log($(window).width());
+//	});
+
+
 	function setHomepageOffset(one, two){
 	// one = 82, 277 +46-10,
 	// two = 102, 297 +46-10,
@@ -41,7 +56,15 @@ $(document).ready(function(){
 			$('#title_text').css('display','inline-block');
 			$('.navbar-header').css('margin-right','50%');
 		}else if ( !$( ".active-filters" ).length ) {
-			$('.main').css('margin-top', one+'px');
+			if ($(window).width() > '768'){
+				$('.main').css('margin-top', one+'px');
+			}else{
+				if ($(".dedication").hasClass("hidden")) {
+					$('.main').css('margin-top', '148px');
+				}else{
+					$('.main').css('margin-top', '333px');
+				}
+			}
 		}else if ( $('.record-nav').length || $( "#wrapper" ).length) {
 			$('.main').css('margin-top', two+'px');
 		}
@@ -50,10 +73,11 @@ $(document).ready(function(){
 	var toggle_switch = document.getElementById("toggle_switch");
         $('#side-switch').click(function(){
     		if($('#side-switch').is(':checked')){
-    			$('#search-sidebar').hide();
-    			$('.mainbody').css("width","100%");
 			toggle_switch.classList.remove("ph-toggle-left");
 			toggle_switch.classList.add("ph-toggle-right");
+			$('#search-sidebar').hide();
+    			$('.mainbody').css("width","100%");
+
 			$('#toggle_switch').css('color','#a7011d');
     			//Cookies.remove('facets')
     			Cookies.set('facets', 'no');
@@ -75,6 +99,7 @@ $(document).ready(function(){
                 toggle_switch.classList.remove("ph-toggle-left");
                 toggle_switch.classList.add("ph-toggle-right");
                 $('#toggle_switch').css('color','#a7011d');
+		$('#side-switch').prop( "checked", true );
 	}
 
 //	var wrapper = document.getElementById("wrapper");	

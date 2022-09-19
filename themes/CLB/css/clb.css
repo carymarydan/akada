@@ -5,17 +5,18 @@ html {
 .container, footer {
 	width:100%;
 }
+header {
+	margin-top:0px;
+	background-color: #333;
+        position: fixed; /* Set the navbar to fixed position */
+        top: 0; /* Position the navbar at the top of the page */
+        width: 100%; /* Full width */
+	z-index:1;
+}
 @media only screen and (min-width: 768px) {
 	header {
-		margin-top:0px;
 		height:128px;
 		display:flex;
-		/*overflow: hidden;*/
-		background-color: #333;
-		position: fixed; /* Set the navbar to fixed position */
-		top: 0; /* Position the navbar at the top of the page */
-		width: 100%; /* Full width */
-		z-index:1;
 	}
 	header .navbar {
 		background-color:#faf9f5;

@@ -76,9 +76,21 @@
       </div>
     <?php endif; ?>
     <div class="buttons">
-    	<button id="list" class="list"><a href="<?=$this->results->getUrlQuery()->setViewParam('list')?>" title="<?=$this->transEscAttr('switch_view', ['%%view%%' => 'List'])?>" ><i class="ph-rows"></i></a></button>
-        <button id="table_view" class="table_view"><a href="<?=$this->results->getUrlQuery()->setViewParam('table')?>" title="<?=$this->transEscAttr('switch_view', ['%%view%%' => 'Table'])?>" ><i class="ph-table"></i></button>
-        <button id="grid" class="grid_view"><a href="<?=$this->results->getUrlQuery()->setViewParam('grid')?>" title="<?=$this->transEscAttr('switch_view', ['%%view%%' => 'Grid'])?>" ><i class="ph-squares-four"></i></button>
+	<button id="list" class="list">
+		<a href="<?=$this->results->getUrlQuery()->setViewParam('list')?>" title="<?=$this->transEscAttr('switch_view', ['%%view%%' => 'List'])?>" >
+			<i class="ph-rows"></i>
+		</a>
+	</button>
+	<button id="table_view" class="table_view">
+		<a href="<?=$this->results->getUrlQuery()->setViewParam('table')?>" title="<?=$this->transEscAttr('switch_view', ['%%view%%' => 'Table'])?>" >
+			<i class="ph-table"></i>
+		</a>
+	</button>
+	<button id="grid" class="grid_view">
+		<a href="<?=$this->results->getUrlQuery()->setViewParam('grid')?>" title="<?=$this->transEscAttr('switch_view', ['%%view%%' => 'Grid'])?>" >
+			<i class="ph-squares-four"></i>
+		</a>
+	</button>
     </div>
   </div>
   <?php /* End Listing Options */ ?>
