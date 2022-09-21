@@ -1,6 +1,11 @@
 $(document).ready(function(){
 
-	$('#wrapper-table').DataTable();
+	$('#wrapper-table').DataTable({
+		paging:false,
+		searching:false,
+		info:false
+	
+	});
 	//dedication
 	$( "#confirm_dedication" ).click(function() {
 		$(".dedication").hide();

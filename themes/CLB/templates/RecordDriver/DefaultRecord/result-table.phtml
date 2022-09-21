@@ -37,16 +37,28 @@
         $infoFields = $formatter->getData($driver, $formatter->getDefaults('search-info'));
       ?>
       <?php if (!empty($infoFields)): ?>
-             <?php foreach ($infoFields as $current): ?>
-               <strong><?=$this->transEsc($current['label'])?>:</strong> <?=$current['value']?><br />
+	     <?php foreach ($infoFields as $current): ?>
+		<?php if ($current['label'] == "Main Author") : ?>
+	              <?=$current['value']?><br />
+		<?php endif; ?>
              <?php endforeach; ?>
       <?php endif; ?>
 </td>
 <td class="year">
-	rok 
+	<?php $years = $this->driver->CLB_getYear(); ?>
+	<?php if (!empty($years)): ?>
+		<?php foreach ($years as $current): ?>
+			<?=$current?><br />
+		<?php endforeach; ?>
+	<?php endif; ?>
 </td>
 <td class="publisher">
-	zdroj/nakladatel
+	<?php $publisher = $this->driver->CLB_getPublisher(); ?>
+        <?php if (!empty($publisher)): ?>
+                <?php foreach ($publisher as $current): ?>
+                        <?=$current?><br />
+                <?php endforeach; ?>
+        <?php endif; ?>
 </td>
 <td class="url">
 	<a href="<?=$this->escapeHtmlAttr($this->recordLinker()->getUrl($this->driver))?>" class="title getFull" data-view="<?=isset($this->params) ? $this->params->getOptions()->getListViewOption() : 'list' ?>">
