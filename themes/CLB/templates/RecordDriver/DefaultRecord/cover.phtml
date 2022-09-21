@@ -1,15 +1,27 @@
+<?php $resourceInfo = $this->driver->CLB_getResourceInfo();
+	$RET = 0;
+	if ($resourceInfo[0] == "Retrospective Bibliography (up to 1945)"){
+		$RET = 1;
+		$id = $this->driver->getUniqueId();
+		$id = preg_replace('/^RET-/s', '', $id);
+	}
+?>
 <?php $alt = $this->link ? trim($this->driver->tryMethod('getTitle') ?? '') : ''; ?>
 <?php if ($this->link && !empty($alt)): ?><a href="<?=$this->escapeHtmlAttr($this->link)?>" class="record-cover-link"><?php endif; ?>
 <?php /* Display thumbnail if appropriate: */ ?>
 <?php if ($cover): ?>
-<div class="format_title">
-<?php foreach ($this->driver->getFormats() as $format): ?>
-  <?php if ($translated = $this->transEsc($format)): ?>
-    <span class="<?=$this->record($this->driver)->getFormatClass($format) ?>"><?=strtoupper($translated) ?></span>
-  <?php endif; ?>
-<?php endforeach; ?>	
-</div>
-  <img src="<?=$this->escapeHtmlAttr($cover); ?>" <?php if ($linkPreview): ?>data-linkpreview="true" <?php endif; ?>class="recordcover" alt="<?=$this->escapeHtmlAttr($alt); ?>" />
+	<div class="format_title">
+	<?php foreach ($this->driver->getFormats() as $format): ?>
+	  <?php if ($translated = $this->transEsc($format)): ?>
+	    <span class="<?=$this->record($this->driver)->getFormatClass($format) ?>"><?=strtoupper($translated) ?></span>
+	  <?php endif; ?>
+	<?php endforeach; ?>	
+	</div>
+	<?php if ($RET): ?>
+		<img src="http://retrobi.ucl.cas.cz/retrobi/resources/retrobi/cardimg?listek=<?=$id?>&obrazek=1o&sirka=800&orez=false" class="recordcover" alt="<?=$this->escapeHtmlAttr($alt); ?>" />
+	<?php else: ?>
+  		<img src="<?=$this->escapeHtmlAttr($cover); ?>" <?php if ($linkPreview): ?>data-linkpreview="true" <?php endif; ?>class="recordcover" alt="<?=$this->escapeHtmlAttr($alt); ?>" />
+	<?php endif; ?>
 <?php elseif ($cover === false): ?>
   <img src="<?=$this->url('cover-unavailable')?>" <?php if ($linkPreview): ?>data-linkpreview="true" <?php endif; ?>class="recordcover" alt="" />
 <?php else: ?>

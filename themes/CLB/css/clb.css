@@ -24,6 +24,10 @@ header {
 		padding-left:10%;
 		/*padding-right:10%;*/
 	}
+	header .navbar .navbar-brand {
+		height:65px;
+		width:170px;
+	}
 }
 @media (max-width: 811px) {
 	/*.search-stats {
@@ -37,9 +41,18 @@ header {
 		display:grid;
 	}
 }
+.navbar-toggle {
+	height:fit-content;
+}
+.collapse.in {
+	display:inline;
+}
 @media (max-width: 767px) {
 	header .navbar .navbar-brand { 
 		background-size: 50px;
+		height:0px;
+		width:70px;
+		margin-right:5px;
 	}
 	header {
 		height:auto;
@@ -97,9 +110,14 @@ footer {
 }
 /* CUSTOM BAR */
 .buttons {
-  display: flex;
-  float: right;
-  margin:auto;
+	display:none;
+}
+@media only screen and (min-width: 768px) {
+	.buttons {
+	  display: flex;
+	  float: right;
+	  margin:auto;
+	}
 }
 .buttons div {
   margin: 0px 10px;
@@ -240,10 +258,10 @@ td.result_col_media{
 	width:100%;
 }
 
-.search-result-limit {
-	margin-left:10%;
-}
 @media only screen and (min-width: 768px) {
+	.search-result-limit {
+		margin-left:10%;
+	}
 	.search-stats {
 		/*padding: 35px 0;*/
 		display:flex;
@@ -294,8 +312,10 @@ td.result_col_media{
 	border-bottom:1px solid #f3eee5;
 	height:100%;
 }
-i{
-	font-size:20px;
+@media only screen and (min-width: 768px) {
+	i {
+		font-size:20px;
+	}
 }
 .btn-primary:hover {
 	background-color:inherit;
@@ -513,8 +533,10 @@ a.carousel-control {
 	margin-top:40px;
 	padding-top:20px;
 }
-.footer-column {
-	display:flex;
+@media only screen and (min-width: 768px) {
+	.footer-column {
+		display:flex;
+	}
 }
 .footer-container ul li {
 	border-bottom:1px solid black;
@@ -614,40 +636,53 @@ ul.pager > li > a > i {
 	margin-right:80px;
 }
 .pagination > .active > span {
-	z-index:auto;
-	color:#b01c35;
-	background-color:white !important;
-	border:3px solid #b01c35;
-	margin:10px;
-	padding:20px;
-        width:60px;
-        height:60px;
-        font-weight:bold;
-        text-align:center;
+                z-index:auto;
+                color:#b01c35;
+		background-color:white !important;
+		text-align:center;
+		border:1px solid #b01c35;
 }
-
 .pagination > li > a {
-	margin:10px;
-	color:inherit;
-	border:3px solid black;
-	padding:20px;
-	width:60px;
-	height:60px;
-	font-weight:bold;
-	text-align:center;
+		text-align:center;
+		color:inherit;
+		border:1px solid black;
 }
 .pagination > li > a.top {
-	border:none;
-	margin-top:16px;
-	background-color:inherit;
+		border:none;
+		background-color:inherit;
 }
 li.page-button-arrow > a {
-	padding:8px;
-        width:40px;
-        height:40px;
-        font-weight:bold;
-        text-align:center;
-	margin-top:20px;
+		text-align:center;
+}
+@media only screen and (min-width: 768px) {
+	.pagination > .active > span {
+		border:3px solid #b01c35;
+		margin:10px;
+		padding:20px;
+		width:60px;
+		height:60px;
+		font-weight:bold;
+	}
+
+	.pagination > li > a {
+		margin:10px;
+		border:3px solid black;
+		padding:20px;
+		width:60px;
+		height:60px;
+		font-weight:bold;
+	}
+	.pagination > li > a.top {
+		margin-top:16px;
+	}
+	li.page-button-arrow > a {
+		padding:8px;
+		width:40px;
+		height:40px;
+		font-weight:bold;
+		text-align:center;
+		margin-top:20px;
+	}
 }
 div.bulk-checkbox > label {
 	font-weight:normal;
@@ -715,6 +750,18 @@ form input[type=checkbox] {
 		margin-left:45%;
 		border:none;
 	}
+}
+.media-ret {
+	width:100%;
+}
+.media-ret > div > a > img.recordcover {
+	max-height:800px;
+}
+.cover-img {
+	text-align:center;
+}
+.carousel-indicators {
+	display:none;
 }
 /*UCL web*/
 .social-links__item {
