@@ -25,6 +25,7 @@ return array (
         'aliases' => 
         array (
           'VuFind\\RecordDriver\\SolrMarc' => 'CLB\\RecordDriver\\SolrMarc',
+          'VuFind\\RecordDriver\\SolrAuthMarc' => 'CLB\\RecordDriver\\SolrAuthMarc',
         ),
         'delegators' => 
         array (
@@ -84,7 +85,7 @@ return array (
     'factories' => 
     array (
       'CLB\\Controller\\CoverController' => 'VuFind\\Controller\\CoverControllerFactory',
-    ),     
+    ),
     'aliases' => 
     array (
       'VuFind\\Controller\\CoverController' => 'CLB\\Controller\\CoverController',

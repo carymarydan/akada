@@ -275,6 +275,17 @@ class SolrMarc extends \VuFind\RecordDriver\SolrMarc
 		return isset($this->fields['info_resource_str_mv']) ? $this->fields['info_resource_str_mv'] : '';
 	}
 	
+	public function CLB_getYear() {
+		return isset($this->fields['year_str_mv']) ? $this->fields['year_str_mv'] : '';
+	}
+	
+	public function CLB_getPublisher() {
+		return isset($this->fields['publisher']) ? $this->fields['publisher'] : '';
+	}
+
+	public function CLB_getAuthoritySearch() {
+		return isset($this->fields['authority_search_str_mv']) ? $this->fields['authority_search_str_mv'] : '';
+	}
     /**
      * Returns one of three things: a full URL to a thumbnail preview of the record
      * if an image is available in an external system; an array of parameters to
