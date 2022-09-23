@@ -1,0 +1,14 @@
+<?php
+  // Set page title.
+  $this->headTitle($this->translate('Content') . ': ' . $this->driver->getBreadcrumb());
+  // TOC od ObalkyKnih.cz
+  $isbn = $this->driver->getCleanISBN();
+  //$cnb = $this->driver->getCnb();
+?>
+        <div class="toc-core">
+            <a href='https://cache.obalkyknih.cz/api/toc/pdf?multi={"isbn":"<?=$isbn?>","nbn":"<?=$cnb?>","oclc":""}'>
+                <img src='https://cache.obalkyknih.cz/api/toc/thumbnail?multi={"isbn":"<?=$isbn?>","nbn":"<?=$cnb?>"}&keywords=hledana%20fraze' alt='Název díla ...' />
+            </a>
+        </div>
+
+

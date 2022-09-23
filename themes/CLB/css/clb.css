@@ -47,6 +47,12 @@ header {
 .collapse.in {
 	display:inline;
 }
+.container > .navbar-collapse {
+	margin:auto;
+}
+.toc-core {
+	text-align:center;
+}
 @media (max-width: 767px) {
 	header .navbar .navbar-brand { 
 		background-size: 50px;
@@ -437,7 +443,7 @@ td.media > div > a > div.format_title {
 	table-layout:auto;
 }
 .nav-tabs > li.similar {
-	margin-left:5%;
+	/*margin-left:5%;*/
 }
 .nav-tabs > li{
 	margin-top:0.6em;
@@ -762,6 +768,12 @@ form input[type=checkbox] {
 }
 .carousel-indicators {
 	display:none;
+}
+.authority > a > i{
+       vertical-align:bottom;
+}
+.authority > a {
+       text-decoration:none;
 }
 /*UCL web*/
 .social-links__item {

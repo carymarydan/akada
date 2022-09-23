@@ -91,6 +91,6 @@ class UserComments extends AbstractBase
      */
     public function getDescription()
     {
-        return 'Comments';
+        return 'Content';
     }
 }
