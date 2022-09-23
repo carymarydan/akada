@@ -10,6 +10,10 @@ $formatProperty = function ($datafield, $name, $label) {
     return '<span class="author-property-' . $name . '">(' . implode(', ', array_unique(array_map($translate, $datafield))) . ')</span>';
 };
 $formattedAuthors = [];
+$i = 0;
+$authId = $this->driver->CLB_getAuthoritySearch();
+$primary_authors = $this->driver->CLB_getDeduplicatedPrimaryAuthors();
+$count_primary_authors = (count($primary_authors["primary"]));
 ?>
 <?php if (!empty($data[$type])): ?>
   <?php foreach ($data[$type] as $author => $dataFields): ?>
@@ -29,12 +33,14 @@ $formattedAuthors = [];
                   echo $formatProperty($dataFields[$name], $name, $prefix);
               }
           }
-        }
+	}
+	if ($type == 'secondary') {
+		$i += $count_primary_authors;
+	}
       ?>
     </span>
-	<?php $authId = $this->driver->CLB_getAuthoritySearch();?>
     <span class="authority">
-	<a href="../Authority/Record?id=<?=$authId[0]?>">
+	<a href="../Authority/Record?id=<?=$authId[$i]?>">
 		<i class="ph-user-circle"></i>
 	</a>
     </span>
@@ -42,6 +48,7 @@ $formattedAuthors = [];
       // Strip whitespace before close tags to avoid spaces in front of commas:
       $formattedAuthors[] = trim(preg_replace('/\s+<\//', '</', ob_get_contents()));
       ob_end_clean();
+      $i++;
     ?>
   <?php endforeach; ?>
 <?php endif; ?>
