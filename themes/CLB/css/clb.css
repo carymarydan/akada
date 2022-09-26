@@ -542,7 +542,7 @@ a.carousel-control {
 	margin-top:40px;
 	padding-top:20px;
 }
-#advSearchForm > .mainbody, .sidebar {
+#advSearchForm > .mainbody, #advSearchForm >.sidebar {
 	margin-top:3%;
 }
 .add_search_link {
