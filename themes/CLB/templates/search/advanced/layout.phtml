@@ -141,18 +141,22 @@
         <?php endif; ?>
       </div>
       <div class="adv-submit">
-	<input class="clear-btn btn btn-primary" type="button" value="<?= $this->transEscAttr('Clear')?>">
-		<i class="ph-backspace-bold"></i>
-	</input>
-        <input class="submit btn btn-primary" type="submit" value="<?= $this->transEscAttr('Find')?>">
+	<button class="clear-btn btn btn-primary" type="button">
+		<span style="vertical-align:super;margin:1rem;"><?=$this->transEscAttr('Clear')?></span><i style="display:contents;" class="ph-backspace"></i>
+	</button>
+	<input class="submit btn btn-primary" type="submit" value="<?= $this->transEscAttr('Find')?>">
+	<?=$this->render('search/advanced/limit.phtml')?>
       </div>
       <?php if (isset($this->extraAdvancedControls)): ?>
         <div class="clearfix">
           <?=$this->extraAdvancedControls ?>
         </div>
-        <div class="adv-submit">
-          <input class="clear-btn btn btn-default" type="button" value="<?= $this->transEscAttr('Clear')?>">
-          <input class="btn btn-primary" type="submit" value="<?= $this->transEscAttr('Find')?>">
+	<div class="adv-submit">
+    	  <button class="clear-btn btn btn-primary" type="button">
+    	  	<span style="vertical-align:super;margin:1rem;"><?=$this->transEscAttr('Clear')?></span><i style="display:contents;" class="ph-backspace"></i>
+    	  </button>
+    	  <input class="submit btn btn-primary" type="submit" value="<?= $this->transEscAttr('Find')?>">
+    	  <?=$this->render('search/advanced/limit.phtml')?>
         </div>
       <?php endif; ?>
     </div>
@@ -178,7 +182,7 @@
           </div>
         <?php endforeach; ?>
       <?php endif; ?>
-      <h4><?=$this->transEsc("Search Tips")?></h4>
+      <label><i class="ph-question-bold"></i><span style="vertical-align:super;margin-left:5px;"><?=$this->transEsc("Search Tips")?></span></label>
       <div class="facet-group">
         <a class="facet help-link" data-lightbox href="<?=$this->url('help-home')?>?topic=advsearch&amp;_=<?=time() ?>"><?=$this->transEsc("Help with Advanced Search")?></a>
         <a class="facet help-link" data-lightbox href="<?=$this->url('help-home')?>?topic=search&amp;_=<?=time() ?>"><?=$this->transEsc("Help with Search Operators")?></a>

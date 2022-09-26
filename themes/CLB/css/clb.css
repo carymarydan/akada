@@ -5,6 +5,9 @@ html {
 .container, footer {
 	width:100%;
 }
+h2 {
+	font-weight:normal;
+}
 header {
 	margin-top:0px;
 	background-color: #333;
@@ -539,7 +542,7 @@ a.carousel-control {
 	margin-top:40px;
 	padding-top:20px;
 }
-#advSearchForm > .mainbody {
+#advSearchForm > .mainbody, .sidebar {
 	margin-top:3%;
 }
 .add_search_link {
@@ -567,12 +570,59 @@ a.carousel-control {
 .adv-submit .submit {
 	float:right;
 }
-.adv-group {
+.adv-submit {
+	margin-top:40px;
+}
+.adv-submit > button {
+	opacity:0.5;
+}
+.adv-submit > .submit {
+	background-color:#a7011d;
+	color:white;
+}
+#advSearchForm > .sidebar > label {
+	color:#a7011d;
+	margin:10px;
+}
+#advSearchForm .sidebar .facet-group {
+	margin-bottom:0px;
+	border-top:1px solid;
+}
+.facet-group > .facet:first-child {
+	border:none;
+}
+#advSearchForm .sidebar.right {
+	padding-left:0;
+}
+.adv-group, .solr-facets, fieldset.range, #advSearchForm > .sidebar {
 	border:none;
 	border-top:2px solid black;
 	border-radius:0px;
 	background-color:#fdfcfa;
 	border-bottom:2px solid black;
+}
+fieldset.range {
+	padding-left:1rem;
+	margin-top:3rem;
+	margin-right:1rem;
+	margin-left:1rem;
+	height:12rem;
+}
+fieldset.limits {
+	width:7rem;
+	float:right;
+	margin-right:3rem;
+}
+@media (min-width: 768px) {
+	fieldset {
+		width:30%;
+	}
+}
+fieldset > label {
+	margin:10px 10px 10px 0;
+	border-bottom:1px solid black;
+	width:100%;
+	padding-bottom:10px;
 }
 .adv-search .adv-term-input {
 	border-radius:0px;
@@ -598,6 +648,30 @@ a.carousel-control {
 	.adv-group-match > .form-control {
 		margin: 15px 5px 5px 0;
 	}
+}
+.adv_search_links {
+	margin:auto;
+}
+.adv_search_links > a:hover {
+	text-decoration:none;
+}
+.adv_search_links > a {
+	font-size:1.2em;
+	margin:15px;
+}
+.adv_search_links > a > i {
+	vertical-align:bottom;
+	margin-left:5px;
+	color:#a7011d;
+}
+.alert {
+	margin-bottom:0px;
+}
+.solr-adv-facet {
+	margin:20px;
+}
+.solr-adv-facet > label {
+	margin-bottom:15px;
 }
 @media only screen and (min-width: 768px) {
 	.footer-column {
