@@ -44,6 +44,11 @@ header {
 		display:grid;
 	}
 }
+@media (max-width: 767px) {
+	header #header-collapse .navbar-right li {
+		text-align:left;
+	}
+}
 .navbar-toggle {
 	height:fit-content;
 }
