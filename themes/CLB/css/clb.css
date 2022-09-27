@@ -682,19 +682,30 @@ fieldset > label {
 	}
 }
 .adv_search_links {
-	margin:auto;
+	display:flex;
 }
-.adv_search_links > a:hover {
-	text-decoration:none;
+@media only screen and (min-width: 768px) {
+	.adv_search_links {
+		margin:auto;
+	}
+	.adv_search_links > a:hover {
+		text-decoration:none;
+	}
+
+	.adv_search_links > a > i {
+		vertical-align:bottom;
+		margin-left:5px;
+		color:#a7011d;
+	}
 }
-.adv_search_links > a {
-	font-size:1.2em;
-	margin:15px;
-}
-.adv_search_links > a > i {
-	vertical-align:bottom;
-	margin-left:5px;
-	color:#a7011d;
+@media only screen and (min-width: 992px) {
+	.adv_search_links > a {
+		font-size:1.2em;
+		margin:15px;
+	}
+	.adv_search_links {
+		display:inline-block;
+	}
 }
 .alert {
 	margin-bottom:0px;
