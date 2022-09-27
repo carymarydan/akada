@@ -41,7 +41,7 @@
         <li class="disabled" aria-hidden="true" role="none"><a href="#"><?=$this->transEsc('Last')?> <i class="fa fa-angle-double-right"></i></a></li>
       <?php endif; ?>
     <?php endif; ?>
-    <span style="vertical-align:super;">
+    <span style="vertical-align:text-bottom;">
     <?=$this->transEsc('of_num_results', [
       '%%position%%' => $this->localizedNumber($this->scrollData['currentPosition']),
       '%%total%%' => $this->localizedNumber($this->scrollData['resultTotal'])

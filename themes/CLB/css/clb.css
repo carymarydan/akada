@@ -807,6 +807,9 @@ ul.pager > li > a > i {
 .record-cover-link {
 	margin-right:80px;
 }
+.pager > li {
+	vertical-align:middle;
+}
 .pagination > .active > span {
                 z-index:auto;
                 color:#b01c35;
