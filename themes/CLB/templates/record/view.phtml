@@ -26,7 +26,7 @@
     '<li class="active" aria-current="page">' . $this->recordLinker()->getBreadcrumbHtml($this->driver) . '</li> ';
   $this->layout()->title = $this->driver->getShortTitle();
 ?>
-<div style="display:block;">
+<div class="record-bar">
 <?php if (isset($this->scrollData) && ($this->scrollData['previousRecord'] || $this->scrollData['nextRecord'])): ?>
   <?=$this->render('record/prev-next.phtml'); ?>
 <?php endif; ?>

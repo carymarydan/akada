@@ -219,6 +219,37 @@ input:checked + .slider:before {
   -ms-transform: translateX(26px);
   transform: translateX(26px);
 }
+.record-bar {
+	display:grid;
+}
+.select-items {
+	display:grid;
+	margin:auto;
+}
+@media only screen and (min-width: 600px) {
+	.select-items {
+		display:flex;
+	}
+}
+@media only screen and (max-width: 768px) {
+	.prev-next > .pager {
+		margin:0 auto;
+	}
+}
+@media only screen and (min-width: 768px) {
+	.record-bar {
+		display:block;
+	}
+	.prev-next {
+		float:left;
+		margin-top:1rem;
+	}
+	.record-nav {
+		float:right;
+		padding-top:1rem;
+		margin-bottom:0;
+	}
+}
 
 /* Rounded sliders */
 .slider.round {
