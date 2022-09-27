@@ -55,9 +55,13 @@ header {
 .collapse.in {
 	display:inline;
 }
+@media (max-width: 767px) {
+	.container > .navbar-collapse {
+		padding-right:60px;
+	}
+}
 .container > .navbar-collapse {
 	margin:auto;
-	padding-right:60px;
 	font-size:1.5rem;
 }
 .toc-core {
@@ -946,6 +950,7 @@ form input[type=checkbox] {
 		display:flex;
 		margin-left:45%;
 		border:none;
+		border-radius:3px;
 	}
 }
 .media-ret {
@@ -990,6 +995,11 @@ form input[type=checkbox] {
     height: 1em;
     position: relative;
     margin-bottom: -0.15em;
+}
+@media only screen and (min-width: 992px) {
+	#wrapper-table{
+		/*font-size:1rem;*/
+	}
 }
 .footer {
   padding: 1.875rem 10% 1.25rem;
