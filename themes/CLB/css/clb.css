@@ -52,6 +52,8 @@ header {
 }
 .container > .navbar-collapse {
 	margin:auto;
+	padding-right:60px;
+	font-size:1.5rem;
 }
 .toc-core {
 	text-align:center;
