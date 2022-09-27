@@ -588,12 +588,19 @@ a.carousel-control {
 	vertical-align:bottom;
 	margin-right:5px;
 }
+.adv-submit {
+	margin-top:40px;
+	display:grid;
+}
 @media only screen and (min-width: 768px) {
 	.adv-submit .submit {
 		width:25%;
 	}
 	.adv-submit .clear-btn {
-	        width:25%;
+	        /*width:25%;*/
+	}
+	.adv-submit {
+		display:block;
 	}
 }
 .adv-submit .clear-btn {
@@ -601,9 +608,6 @@ a.carousel-control {
 }
 .adv-submit .submit {
 	float:right;
-}
-.adv-submit {
-	margin-top:40px;
 }
 .adv-submit > button {
 	opacity:0.5;
